@@ -11,11 +11,10 @@ import java.time.Duration;
 
 public class Imdb {
 
-private static final String API_KEY = "k_k9anhy4s";
+	private static final String API_KEY = "k_k9anhy4s";
+	private static final HttpClient httpClient;
 	
-	private final HttpClient httpClient;
-	
-	public Imdb() {
+	static {
 		httpClient = HttpClient.newBuilder()
 				.version(Version.HTTP_2)
 				.followRedirects(Redirect.NORMAL)
@@ -23,7 +22,7 @@ private static final String API_KEY = "k_k9anhy4s";
 				.build();
 	}
 	
-	private HttpResponse<String> sendRequest(String uri) throws Exception {
+	private static HttpResponse<String> sendRequest(String uri) throws Exception {
 		HttpRequest httpRequest = HttpRequest.newBuilder()
 				.uri(URI.create(uri))
 				.timeout(Duration.ofSeconds(30))
@@ -36,7 +35,7 @@ private static final String API_KEY = "k_k9anhy4s";
 //				.join();
 	}
 	
-	public HttpResponse<String> sendRequestTop250Movies() throws Exception {
+	public static HttpResponse<String> sendRequestTop250Movies() throws Exception {
 		return sendRequest("https://imdb-api.com/en/API/Top250Movies/" + API_KEY);
 	}
 }

@@ -2,13 +2,17 @@ package com.streisky.sevendaysofcode;
 
 import java.net.http.HttpResponse;
 
+import com.streisky.sevendaysofcode.model.Top250Data;
+import com.streisky.sevendaysofcode.utils.JsonUtils;
+
 public class App 
 {
 	public static void main(String[] args) {
-		Imdb imdb = new Imdb();
 		try {
-			HttpResponse<String> response = imdb.sendRequestTop250Movies();
-			System.out.println(response.body());
+			HttpResponse<String> response = Imdb.sendRequestTop250Movies();
+			
+			Top250Data top250Data = (Top250Data) JsonUtils.convertStringToObject(Top250Data.class, response.body());
+			System.out.println(top250Data);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
