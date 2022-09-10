@@ -29,6 +29,6 @@ public class Top250Data {
 	@Override
 	public String toString() {
 		return "GeneralInfo [items=" + items.toString() + ", messageError=" + messageError + "]"
-				+ "\n";
+				+ System.lineSeparator();
 	}
 }
