@@ -2,15 +2,15 @@ package com.streisky.sevendaysofcode.model;
 
 public class Top250DataDetail {
 
-	public String id;
-	public String rank;
-	public String title;
-	public String fullTitle;
-	public String year;
-	public String image;
-	public String crew;
-	public String imDbRating;
-	public String imDbRatingCount;
+	private String id;
+	private String rank;
+	private String title;
+	private String fullTitle;
+	private String year;
+	private String image;
+	private String crew;
+	private String imDbRating;
+	private String imDbRatingCount;
 	
 	public Top250DataDetail(String id, String rank, String title, String fullTitle, String year, String image,
 			String crew, String imDbRating, String imDbRatingCount) {
@@ -86,6 +86,6 @@ public class Top250DataDetail {
 		return "Top250DataDetail [id=" + id + ", rank=" + rank + ", title=" + title + ", fullTitle=" + fullTitle
 				+ ", year=" + year + ", image=" + image + ", crew=" + crew + ", imDbRating=" + imDbRating
 				+ ", imDbRatingCount=" + imDbRatingCount + "]"
-				+ "\n";
+				+ System.lineSeparator();
 	}
 }
