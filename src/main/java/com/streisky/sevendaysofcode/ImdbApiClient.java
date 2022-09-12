@@ -9,7 +9,7 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.time.Duration;
 
-public class Imdb {
+public class ImdbApiClient {
 
 	private static final String API_KEY = "k_k9anhy4s";
 	private static final HttpClient httpClient;
@@ -22,20 +22,19 @@ public class Imdb {
 				.build();
 	}
 	
-	private static HttpResponse<String> sendRequest(String uri) throws Exception {
+	private static String sendRequest(String uri) throws Exception {
 		HttpRequest httpRequest = HttpRequest.newBuilder()
 				.uri(URI.create(uri))
 				.timeout(Duration.ofSeconds(30))
 				.GET()
 				.build();
 		
-		return httpClient.send(httpRequest, BodyHandlers.ofString());
-//		String response = httpClient.sendAsync(httpRequest, BodyHandlers.ofString())
-//				.thenApply(HttpResponse::body)
-//				.join();
+		HttpResponse<String> response = httpClient.send(httpRequest, BodyHandlers.ofString());
+		
+		return response.body();
 	}
 	
-	public static HttpResponse<String> sendRequestTop250Movies() throws Exception {
+	public static String sendRequestTop250Movies() throws Exception {
 		return sendRequest("https://imdb-api.com/en/API/Top250Movies/" + API_KEY);
 	}
 }
