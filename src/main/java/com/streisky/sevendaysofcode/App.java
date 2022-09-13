@@ -2,6 +2,7 @@ package com.streisky.sevendaysofcode;
 
 import java.io.PrintWriter;
 
+import com.streisky.sevendaysofcode.apiclient.ImdbApiClient;
 import com.streisky.sevendaysofcode.model.Top250Data;
 import com.streisky.sevendaysofcode.utils.JsonUtils;
 
