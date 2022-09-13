@@ -1,17 +1,16 @@
-package com.streisky.sevendaysofcode;
+package com.streisky.sevendaysofcode.apiclient;
 
 import java.net.URI;
 import java.net.http.HttpClient;
-import java.net.http.HttpClient.Redirect;
-import java.net.http.HttpClient.Version;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.net.http.HttpClient.Redirect;
+import java.net.http.HttpClient.Version;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.time.Duration;
 
-public class ImdbApiClient {
+public abstract class ApiClient {
 
-	private static final String API_KEY = "k_k9anhy4s";
 	private static final HttpClient httpClient;
 	
 	static {
@@ -21,8 +20,8 @@ public class ImdbApiClient {
 				.connectTimeout(Duration.ofSeconds(30))
 				.build();
 	}
-	
-	private static String sendRequest(String uri) throws Exception {
+
+	protected static String sendRequest(String uri) throws Exception {
 		HttpRequest httpRequest = HttpRequest.newBuilder()
 				.uri(URI.create(uri))
 				.timeout(Duration.ofSeconds(30))
@@ -32,9 +31,5 @@ public class ImdbApiClient {
 		HttpResponse<String> response = httpClient.send(httpRequest, BodyHandlers.ofString());
 		
 		return response.body();
-	}
-	
-	public static String sendRequestTop250Movies() throws Exception {
-		return sendRequest("https://imdb-api.com/en/API/Top250Movies/" + API_KEY);
 	}
 }
