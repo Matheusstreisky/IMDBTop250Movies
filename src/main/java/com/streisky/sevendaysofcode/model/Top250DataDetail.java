@@ -1,6 +1,6 @@
 package com.streisky.sevendaysofcode.model;
 
-public class Top250DataDetail {
+public class Top250DataDetail implements Comparable<Top250DataDetail> {
 
 	private String id;
 	private String rank;
@@ -103,5 +103,10 @@ public class Top250DataDetail {
 		return "Top250DataDetail [id=" + id + ", rank=" + rank + ", title=" + title + ", fullTitle=" + fullTitle
 				+ ", year=" + year + ", image=" + image + ", crew=" + crew + ", imDbRating=" + imDbRating
 				+ ", imDbRatingCount=" + imDbRatingCount + "]" + System.lineSeparator();
+	}
+
+	@Override
+	public int compareTo(Top250DataDetail other) {
+		return this.getFullTitle().compareTo(other.getFullTitle());
 	}
 }
