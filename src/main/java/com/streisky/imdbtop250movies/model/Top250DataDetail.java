@@ -1,4 +1,4 @@
-package com.streisky.sevendaysofcode.model;
+package com.streisky.imdbtop250movies.model;
 
 public class Top250DataDetail implements Comparable<Top250DataDetail> {
 

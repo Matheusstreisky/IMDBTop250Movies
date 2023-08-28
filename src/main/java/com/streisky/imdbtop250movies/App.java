@@ -1,11 +1,11 @@
-package com.streisky.sevendaysofcode;
+package com.streisky.imdbtop250movies;
 
 import java.io.PrintWriter;
 import java.util.Collections;
 
-import com.streisky.sevendaysofcode.apiclient.ImdbApiClient;
-import com.streisky.sevendaysofcode.model.Top250Data;
-import com.streisky.sevendaysofcode.utils.JsonUtils;
+import com.streisky.imdbtop250movies.apiclient.ImdbApiClient;
+import com.streisky.imdbtop250movies.model.Top250Data;
+import com.streisky.imdbtop250movies.utils.JsonUtils;
 
 public class App {
 

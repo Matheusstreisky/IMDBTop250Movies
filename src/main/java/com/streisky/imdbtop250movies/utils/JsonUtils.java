@@ -1,11 +1,11 @@
-package com.streisky.sevendaysofcode.utils;
+package com.streisky.imdbtop250movies.utils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.streisky.sevendaysofcode.model.Content;
+import com.streisky.imdbtop250movies.model.Content;
 
 public class JsonUtils {
 

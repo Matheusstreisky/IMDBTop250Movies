@@ -1,9 +1,9 @@
-package com.streisky.sevendaysofcode;
+package com.streisky.imdbtop250movies;
 
 import java.io.PrintWriter;
 
-import com.streisky.sevendaysofcode.model.Top250Data;
-import com.streisky.sevendaysofcode.model.Top250DataDetail;
+import com.streisky.imdbtop250movies.model.Top250Data;
+import com.streisky.imdbtop250movies.model.Top250DataDetail;
 
 public class HTMLGenerator {
 	

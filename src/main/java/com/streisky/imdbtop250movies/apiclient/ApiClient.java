@@ -1,4 +1,4 @@
-package com.streisky.sevendaysofcode.apiclient;
+package com.streisky.imdbtop250movies.apiclient;
 
 import java.net.URI;
 import java.net.http.HttpClient;

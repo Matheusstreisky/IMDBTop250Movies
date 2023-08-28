@@ -1,4 +1,4 @@
-package com.streisky.sevendaysofcode;
+package com.streisky.imdbtop250movies;
 
 import static org.junit.Assert.assertTrue;
 

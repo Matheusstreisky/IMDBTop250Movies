@@ -1,4 +1,4 @@
-package com.streisky.sevendaysofcode.model;
+package com.streisky.imdbtop250movies.model;
 
 import java.util.List;
 
